@@ -1,0 +1,9 @@
+<h1>Tasks Index</h1>
+
+<% @tasks.each do |task| %>
+	<div class="container">
+		<h4><%= link_to task.title, task %> &nbsp &nbsp &nbsp &nbsp &nbsp
+			Due date:<%= task.due_date %></h4>	
+		<hr>
+	</div>
+<% end %>

@@ -1,0 +1,13 @@
+<div class="container">
+	<h3><%= @project.title %></h3>
+	<h4>Due Date: <%= @project.due_date %></h4>
+	<br><br>
+	<h5>Description: <%= @project.description %></h5>
+
+	<br>
+	<%= link_to "Edit", edit_project_path(@project), class: "btn btn-sm btn-info"%>
+	<%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-sm btn-danger"%>
+	<hr>
+
+	<!-- Add tasks here -->
+</div>

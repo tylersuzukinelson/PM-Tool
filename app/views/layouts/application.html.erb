@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PmTool</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<a href="/">Home</a>
+|
+<a href="/about">About</a>
+|
+<a href="/projects/new">Create New Project</a>
+|
+<a href="/projects">View all Projects</a>
+
+
+
+<!-- all tasks and create new tasks should be listed on associated project page
+|
+<a href="/tasks/new">Create New Task</a> 
+|
+<a href="/tasks">All Tasks</a> -->
+
+<hr>
+	<%= flash[:notice] || flash[:error] %>
+<hr>
+
+<%= yield %>
+
+</body>
+</html>
