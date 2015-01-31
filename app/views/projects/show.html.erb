@@ -9,5 +9,41 @@
 	<%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-sm btn-danger"%>
 	<hr>
 
-	<!-- Add tasks here -->
+	<h4>Create a Discussion</h4>
+	<%= render "/discussions/form" %>
+
+	<h1>Discussions</h1>
+	<% @project.discussions.each do |discussion| %>
+	    <%= discussion.title %><br>
+	    <%= discussion.description %>
+
+
+		<%= link_to "Update", edit_project_discussion_path(@project, discussion), class: "btn btn-xs btn-info" %>
+		<%= link_to "Delete", project_discussion_path(@project, discussion), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-xs btn-danger"%>
+		<br><br>
+
+
+		<%= form_for [discussion, (@comment || Comment.new)] do |f| %>
+			<div class="form-group">
+				<%= f.label :body, 'Comment' %>
+				<%= f.text_area :body, class: "form-control" %>
+			</div>
+			<%= f.submit class: "btn btn-info btn-sm" %>
+		<% end %>
+
+		 <% discussion.comments.each do |comment| %>
+	    <div class="well" >
+	      <%= comment.body %>
+		<!-- Comment From: <%#= answer.question.user_first_name %> -->	     
+		<br>
+		<%= link_to "Update", edit_discussion_comment_path(discussion, comment), class: "btn btn-xs btn-info" %>
+		<%= link_to "Delete", discussion_comment_path(discussion, comment), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-warning" %><br>
+	    </div>
+	  <% end %>
+	  <hr>
+
+	<% end %>
+
+
+
 </div>

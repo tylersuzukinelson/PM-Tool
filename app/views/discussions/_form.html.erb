@@ -1,0 +1,21 @@
+
+<% if @discussion.errors.any? %>
+	<ul>
+		<%= @discussion.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<%#= form_form @answer, url: question_answers_path(@question) do |f| %>
+
+<%= form_for [@project, @discussion] do |f| %>
+	<%= f.label :title, class: "form-control" %>
+	<%= f.text_field :title, class: "form-control" %>
+	<br>
+	<%= f.label :description, class: "form-control" %>
+	<%= f.text_area :description, class: "form-control" %>
+	<br>
+	<%= f.submit class: "btn btn-primary" %>
+	<br>
+<% end %>

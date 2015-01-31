@@ -25,6 +25,8 @@ class ProjectsController < ApplicationController
 
 	def show
 		@project = Project.find params[:id]
+		@discussion = Discussion.new
+		@discussions = @project.discussions
 	end
 
 	def update
