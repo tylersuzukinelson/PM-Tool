@@ -4,7 +4,12 @@ Rails.application.routes.draw do
 
 	get "/about" => "home#about"
 
-	resources :tasks
+	resources :tasks do
+		member do
+			patch :mark_complete
+			patch :mark_incomplete
+		end
+	end
 
 	resources :projects do
 		resources :discussions, only: [:create, :update, :edit, :destroy]

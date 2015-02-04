@@ -4,6 +4,13 @@
 	<p>Due: <%= @task.due_date %></p>
 	<p><%= @task.body %></p>
 
+	<% if @task.completed_status %>
+		<%= link_to "Mark as not done", mark_incomplete_task_path(@task), class: "btn btn-default", method: :patch %>
+	<% else %>
+		<%= link_to "Mark as done", mark_complete_task_path(@task), class: "btn btn-default", method: :patch %>
+	<% end %>
+
+	<br><br>
 	<%= link_to "Edit", edit_task_path(@task), class: "btn btn-sm btn-primary"%>
 	<%= link_to "Delete", task_path(@task), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-sm btn-danger"%>
 
