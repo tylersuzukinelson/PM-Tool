@@ -4,15 +4,16 @@
 	<p>Due: <%= @task.due_date %></p>
 	<p><%= @task.body %></p>
 
+	<hr>
 	<% if @task.completed_status %>
-		<%= link_to "Mark as not done", mark_incomplete_project_task_path(@project, @task), class: "btn btn-default", method: :patch %>
+		<%= link_to "Mark as not done", mark_incomplete_project_task_path(@project, @task), class: "btn btn-success", method: :patch %>
 	<% else %>
-		<%= link_to "Mark as done", mark_complete_project_task_path(@project, @task), class: "btn btn-default", method: :patch %>
+		<%= link_to "Mark as done", mark_complete_project_task_path(@project, @task), class: "btn btn-danger", method: :patch %>
 	<% end %>
 
 	<br><br>
-	<%= link_to "Edit", edit_project_task_path(@project, @task), class: "btn btn-sm btn-primary"%>
-	<%= link_to "Delete", project_task_path(@project, @task), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-sm btn-danger"%>
-
-	<hr>
+	<%= link_to "Edit", edit_project_task_path(@project, @task), class: "btn btn-sm btn-default"%>
+	<%= link_to "Delete", project_task_path(@project, @task), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-sm btn-default"%>
+	<%= link_to "Return to Project", project_path(@project), class: "btn btn-sm btn-default"%>
+	
 </div>
