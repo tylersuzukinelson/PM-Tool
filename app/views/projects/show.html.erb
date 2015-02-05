@@ -1,16 +1,38 @@
 <div class="container">
-	<h3><%= @project.title %></h3>
-	<h4>Due Date: <%= @project.due_date %></h4>
+	<h3><%= @project.title %></h3> 
+	<h5>Due Date: <%= @project.due_date %></h5>
 	<br><br>
-	<h5>Description: <%= @project.description %></h5>
+	<h4>Description: <%= @project.description %></h4>
 
 	<br>
+	<%= link_to "Add Task", new_project_task_path(@project), class: "btn btn-sm btn-info"%>
 	<%= link_to "Edit", edit_project_path(@project), class: "btn btn-sm btn-info"%>
 	<%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-sm btn-danger"%>
-	<hr>
+	
 
+	<!-- add project tasks here -->
+
+	<div id="project-tasks">
+	  <% @project.tasks.each do |task| %>
+	    <%#= render partial: "/tasks/task", locals: {task: task} %>
+	    <% if task.completed_status %> 
+	    	<div class="completed-tasks">
+	    		<h4>Completed Tasks</h4>
+	    		<%= link_to task.title, project_task_path(@project, task) %>
+	    	</div>
+	    <% else %>
+	    	<div class="incomplete-tasks">
+	    		<h4>Incomplete Tasks</h4>
+	    		<%= link_to task.title, project_task_path(@project, task) %>
+	    	</div>
+	    <% end %>
+	  <% end %>  
+	</div>
+
+
+	<hr>
 	<h4>Create a Discussion</h4>
-	<%= render "/discussions/form" %>
+	<%= render partial: "/discussions/form" %>
 
 	<h1>Discussions</h1>
 	<% @project.discussions.each do |discussion| %>
@@ -23,18 +45,14 @@
 		<br><br>
 
 
-		<%= form_for [discussion, (@comment || Comment.new)] do |f| %>
-			<div class="form-group">
-				<%= f.label :body, 'Comment' %>
-				<%= f.text_area :body, class: "form-control" %>
-			</div>
+		<%= simple_form_for [discussion, (@comment || Comment.new)], html: { class: "form-horizontal"} do |f| %>	
+			<%= f.input :body %>
 			<%= f.submit class: "btn btn-info btn-sm" %>
 		<% end %>
 
 		 <% discussion.comments.each do |comment| %>
 	    <div class="well" >
 	      <%= comment.body %>
-		<!-- Comment From: <%#= answer.question.user_first_name %> -->	     
 		<br>
 		<%= link_to "Update", edit_discussion_comment_path(discussion, comment), class: "btn btn-xs btn-info" %>
 		<%= link_to "Delete", discussion_comment_path(discussion, comment), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-warning" %><br>
@@ -43,7 +61,5 @@
 	  <hr>
 
 	<% end %>
-
-
 
 </div>
