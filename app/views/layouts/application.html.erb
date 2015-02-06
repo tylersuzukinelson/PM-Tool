@@ -15,6 +15,12 @@
 |
 <a href="/projects">View all Projects</a>
 
+<% if user_signed_in? %>
+    Hello <%= current_user.first_name %>,
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign In", new_user_session_path %>
+  <% end %>
 
 <%= yield %>
 
