@@ -9,6 +9,8 @@
 		<%= f.input :description %>
 		<br>
 
+		<%= f.association :contributing_users, as: :check_boxes, label_method: :full_name %>
+
 		<%= f.submit class: "btn btn-submit" %>
 	</div>
 <% end %>

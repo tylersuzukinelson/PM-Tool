@@ -30,6 +30,8 @@ class ProjectsController < ApplicationController
 		@task = Task.new
 		@task.project = @project
 
+		@contributors = @project.contributing_users
+
 		@discussion = Discussion.new
 		@discussions = @project.discussions
 	end
@@ -58,7 +60,7 @@ private
 	end
 
 	def project_params
-		project_params = params.require(:project).permit(:title, :description, :due_date)
+		project_params = params.require(:project).permit(:title, :description, :due_date, {contributing_user_ids: []})
 	end
 
 end

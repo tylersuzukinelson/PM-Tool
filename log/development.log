@@ -39043,3 +39043,3404 @@ Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::
 
 
 Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 20:47:03 -0800
+
+
+Started GET "/projects" for ::1 at 2015-02-05 22:39:16 -0800
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 261ms (Views: 257.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/2" for ::1 at 2015-02-05 22:39:18 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mTask Load (0.4ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 2]]
+  Rendered discussions/_form.html.erb (12.2ms)
+  [1m[35mDiscussion Load (0.4ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 2]]
+  [1m[36mComment Load (21.4ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."discussion_id" = $1[0m  [["discussion_id", 4]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."discussion_id" = $1  [["discussion_id", 2]]
+  Rendered projects/show.html.erb within layouts/application (93.9ms)
+Completed 200 OK in 384ms (Views: 325.7ms | ActiveRecord: 28.5ms)
+
+
+Started POST "/projects/2/discussions" for ::1 at 2015-02-05 22:39:38 -0800
+Processing by DiscussionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T45lsyiCxoRf6WEzuQTNyrEHmK+1+eptcSod+lccWb/2TiOyFNGtUHtnk6l7DAK4iVZxm8bB2J9Nr+LMIf3ZFg==", "discussion"=>{"title"=>"asdsad", "description"=>""}, "commit"=>"Create Discussion", "project_id"=>"2"}
+  [1m[36mProject Load (1.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mTask Load (0.4ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1  [["project_id", 2]]
+  Rendered discussions/_form.html.erb (22.1ms)
+  [1m[36mDiscussion Load (0.4ms)[0m  [1mSELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."discussion_id" = $1  [["discussion_id", 4]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."discussion_id" = $1[0m  [["discussion_id", 2]]
+  Rendered projects/show.html.erb within layouts/application (52.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+Completed 200 OK in 373ms (Views: 362.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 22:39:39 -0800
+
+
+Started POST "/projects/2/discussions" for ::1 at 2015-02-05 22:39:42 -0800
+Processing by DiscussionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Yw3A4okaFDFItJstmZrqVVT3E12ihZiF5sN9h2poKlkTHECtncDhOGsIPZ0bqTbbQI1eQWyJJArHvLAa0ggAA==", "discussion"=>{"title"=>"asdsad", "description"=>"asdfasdf"}, "commit"=>"Create Discussion", "project_id"=>"2"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (43.0ms)[0m  [1mINSERT INTO "discussions" ("title", "description", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "asdsad"], ["description", "asdfasdf"], ["project_id", 2], ["created_at", "2015-02-06 06:39:42.547021"], ["updated_at", "2015-02-06 06:39:42.547021"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/projects/2
+Completed 302 Found in 54ms (ActiveRecord: 44.2ms)
+
+
+Started GET "/projects/2" for ::1 at 2015-02-05 22:39:42 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mTask Load (1.4ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 2]]
+  Rendered discussions/_form.html.erb (17.2ms)
+  [1m[35mDiscussion Load (0.5ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 2]]
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."discussion_id" = $1[0m  [["discussion_id", 4]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."discussion_id" = $1  [["discussion_id", 2]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."discussion_id" = $1[0m  [["discussion_id", 5]]
+  Rendered projects/show.html.erb within layouts/application (62.1ms)
+Completed 200 OK in 339ms (Views: 325.7ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 22:39:42 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 22:39:43 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 22:39:43 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 22:39:43 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 22:39:43 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 22:39:43 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 22:39:43 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 22:39:43 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 22:39:43 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 22:39:43 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 22:39:43 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 22:39:43 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 22:39:43 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 22:39:43 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 22:39:43 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 22:39:43 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 22:39:43 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 22:39:43 -0800
+
+
+Started GET "/projects/2" for ::1 at 2015-02-05 23:13:18 -0800
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.0) lib/active_record/migration.rb:393:in `check_pending!'
+  activerecord (4.2.0) lib/active_record/migration.rb:374:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/merlekinkade/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/merlekinkade/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/merlekinkade/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (45.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateContributions (20150206070103)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (142.4ms)[0m  [1mCREATE TABLE "contributions" ("id" serial primary key, "user_id" integer, "project_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_contributions_on_user_id" ON "contributions"  ("user_id")
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_contributions_on_project_id" ON "contributions"  ("project_id")[0m
+  [1m[35m (35.2ms)[0m  ALTER TABLE "contributions" ADD CONSTRAINT "fk_rails_47df8622e3"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+
+  [1m[36m (1.8ms)[0m  [1mALTER TABLE "contributions" ADD CONSTRAINT "fk_rails_16cae5b9ae"
+FOREIGN KEY ("project_id")
+  REFERENCES "projects" ("id")
+[0m
+  [1m[35mSQL (17.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150206070103"]]
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (24.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'comments'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (13.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'contributions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'discussions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'projects'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tasks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/projects/2" for ::1 at 2015-02-05 23:13:33 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTask Load (0.6ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1  [["project_id", 2]]
+  Rendered discussions/_form.html.erb (13.3ms)
+  [1m[36mDiscussion Load (0.4ms)[0m  [1mSELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."discussion_id" = $1  [["discussion_id", 4]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."discussion_id" = $1[0m  [["discussion_id", 2]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."discussion_id" = $1  [["discussion_id", 5]]
+  Rendered projects/show.html.erb within layouts/application (64.9ms)
+Completed 200 OK in 416ms (Views: 340.1ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:13:34 -0800
+
+
+Started GET "/projects/2/tasks/59" for ::1 at 2015-02-05 23:13:37 -0800
+Processing by TasksController#show as HTML
+  Parameters: {"project_id"=>"2", "id"=>"59"}
+  [1m[36mTask Load (0.4ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1[0m  [["id", 59]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered tasks/show.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+Completed 200 OK in 267ms (Views: 260.9ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/projects/2/tasks/59/mark_incomplete" for ::1 at 2015-02-05 23:13:40 -0800
+Processing by TasksController#mark_incomplete as HTML
+  Parameters: {"authenticity_token"=>"RWCsEnmTg/YB4jMS/p/hSDJWwKTCRKQW3karE2kak778oOoTRcDoIiVswYg8ly46CgcpkLF8luTiw1QlH/sTFw==", "project_id"=>"2", "id"=>"59"}
+  [1m[35mTask Load (0.4ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1  [["id", 59]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mTask Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "tasks" WHERE ("tasks"."title" = 'trying another task again again again' AND "tasks"."id" != 59 AND "tasks"."project_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "tasks" SET "completed_status" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3  [["completed_status", "f"], ["updated_at", "2015-02-06 07:13:40.356366"], ["id", 59]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/2/tasks/59
+Completed 302 Found in 15ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/projects/2/tasks/59" for ::1 at 2015-02-05 23:13:40 -0800
+Processing by TasksController#show as HTML
+  Parameters: {"project_id"=>"2", "id"=>"59"}
+  [1m[35mTask Load (0.4ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1  [["id", 59]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered tasks/show.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+Completed 200 OK in 251ms (Views: 247.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:13:40 -0800
+
+
+Started PATCH "/projects/2/tasks/59/mark_complete" for ::1 at 2015-02-05 23:13:42 -0800
+Processing by TasksController#mark_complete as HTML
+  Parameters: {"authenticity_token"=>"1nkhpSsznXhNJIH+Q0SnVpY7HEoQX3I0iAMJOIVmdv1vuWekF2D2rGmqc2SBTGgkrmr1fmNnQMa0hvYO84f2VA==", "project_id"=>"2", "id"=>"59"}
+  [1m[36mTask Load (0.4ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1[0m  [["id", 59]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mTask Exists (0.4ms)[0m  SELECT  1 AS one FROM "tasks" WHERE ("tasks"."title" = 'trying another task again again again' AND "tasks"."id" != 59 AND "tasks"."project_id" = 2) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "tasks" SET "completed_status" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3[0m  [["completed_status", "t"], ["updated_at", "2015-02-06 07:13:42.575843"], ["id", 59]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/projects/2/tasks/59
+Completed 302 Found in 10ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/projects/2/tasks/59" for ::1 at 2015-02-05 23:13:42 -0800
+Processing by TasksController#show as HTML
+  Parameters: {"project_id"=>"2", "id"=>"59"}
+  [1m[36mTask Load (0.6ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1[0m  [["id", 59]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered tasks/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+Completed 200 OK in 269ms (Views: 265.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:42 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:42 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:42 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:42 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:42 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:13:42 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:13:42 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:13:42 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:13:42 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:13:42 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:13:43 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:43 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:43 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:43 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:43 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:43 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:13:43 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:13:43 -0800
+
+
+Started GET "/projects/2/tasks/59" for ::1 at 2015-02-05 23:22:54 -0800
+Processing by TasksController#show as HTML
+  Parameters: {"project_id"=>"2", "id"=>"59"}
+  [1m[35mTask Load (0.4ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1  [["id", 59]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered tasks/show.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+Completed 200 OK in 330ms (Views: 283.2ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:22:54 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:22:55 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:22:55 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:22:55 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:22:55 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:22:55 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:22:55 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:22:55 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:22:55 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:22:55 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:22:55 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:22:55 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:22:55 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:22:55 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:22:55 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:22:55 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:22:55 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:22:55 -0800
+
+
+Started GET "/projects/new" for ::1 at 2015-02-05 23:22:56 -0800
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  Rendered projects/_form.html.erb (68.8ms)
+  Rendered projects/new.html.erb within layouts/application (71.4ms)
+Completed 500 Internal Server Error in 84ms
+
+ActionView::Template::Error (undefined method `associations' for #<SimpleForm::FormBuilder:0x00000101a13bd0>):
+     9: 		<%= f.input :description %>
+    10: 		<br>
+    11: 
+    12: 		<%= f.associations :contributors, as: :check_boxes, label_method: :full_name %>
+    13: 
+    14: 		<%= f.submit class: "btn btn-submit" %>
+    15: 	</div>
+  app/views/projects/_form.html.erb:12:in `block in _app_views_projects__form_html_erb___2493429644011460090_2161234420'
+  app/views/projects/_form.html.erb:1:in `_app_views_projects__form_html_erb___2493429644011460090_2161234420'
+  app/views/projects/new.html.erb:3:in `_app_views_projects_new_html_erb__1981048885683504682_2161351300'
+
+
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (17.2ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (6.6ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.6ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (59.0ms)
+
+
+Started GET "/projects/new" for ::1 at 2015-02-05 23:22:57 -0800
+Processing by ProjectsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+  Rendered projects/_form.html.erb (57.0ms)
+  Rendered projects/new.html.erb within layouts/application (59.1ms)
+Completed 500 Internal Server Error in 66ms
+
+ActionView::Template::Error (undefined method `associations' for #<SimpleForm::FormBuilder:0x00000106d8bbf0>):
+     9: 		<%= f.input :description %>
+    10: 		<br>
+    11: 
+    12: 		<%= f.associations :contributors, as: :check_boxes, label_method: :full_name %>
+    13: 
+    14: 		<%= f.submit class: "btn btn-submit" %>
+    15: 	</div>
+  app/views/projects/_form.html.erb:12:in `block in _app_views_projects__form_html_erb___2493429644011460090_2204976200'
+  app/views/projects/_form.html.erb:1:in `_app_views_projects__form_html_erb___2493429644011460090_2204976200'
+  app/views/projects/new.html.erb:3:in `_app_views_projects_new_html_erb__1981048885683504682_2219689400'
+
+
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (14.1ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (42.8ms)
+
+
+Started GET "/projects/new" for ::1 at 2015-02-05 23:23:13 -0800
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  Rendered projects/_form.html.erb (31.4ms)
+  Rendered projects/new.html.erb within layouts/application (32.9ms)
+Completed 500 Internal Server Error in 40ms
+
+ActionView::Template::Error (Association :contributors not found):
+     9: 		<%= f.input :description %>
+    10: 		<br>
+    11: 
+    12: 		<%= f.association :contributors, as: :check_boxes, label_method: :full_name %>
+    13: 
+    14: 		<%= f.submit class: "btn btn-submit" %>
+    15: 	</div>
+  app/views/projects/_form.html.erb:12:in `block in _app_views_projects__form_html_erb___2493429644011460090_2220912720'
+  app/views/projects/_form.html.erb:1:in `_app_views_projects__form_html_erb___2493429644011460090_2220912720'
+  app/views/projects/new.html.erb:3:in `_app_views_projects_new_html_erb__1981048885683504682_2219689400'
+
+
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (16.2ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (47.5ms)
+
+
+Started GET "/projects/new" for ::1 at 2015-02-05 23:29:43 -0800
+Processing by ProjectsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered projects/_form.html.erb (68.3ms)
+  Rendered projects/new.html.erb within layouts/application (69.9ms)
+Completed 200 OK in 379ms (Views: 333.9ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:29:44 -0800
+
+
+Started POST "/projects" for ::1 at 2015-02-05 23:30:18 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0nCu/vYLE5sdieROMLlqNyZ4+1iBdBKFMRV5bP9Io4lrsOj/ylh4TzkHFtTysaVFHikSbPJMIHcNkIZaiakjIA==", "project"=>{"title"=>"test project title", "due_date(1i)"=>"2015", "due_date(2i)"=>"10", "due_date(3i)"=>"14", "description"=>"asdfsaf", "contributing_user_ids"=>["7", "9", "11", ""]}, "commit"=>"Create Project"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (7, 9, 11)[0m
+Completed 500 Internal Server Error in 20ms
+
+NoMethodError (undefined method `user=' for #<Project:0x00000101f31c48>):
+  app/controllers/projects_controller.rb:15:in `create'
+
+
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (10.2ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (40.1ms)
+
+
+Started POST "/projects" for ::1 at 2015-02-05 23:30:39 -0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0nCu/vYLE5sdieROMLlqNyZ4+1iBdBKFMRV5bP9Io4lrsOj/ylh4TzkHFtTysaVFHikSbPJMIHcNkIZaiakjIA==", "project"=>{"title"=>"test project title", "due_date(1i)"=>"2015", "due_date(2i)"=>"10", "due_date(3i)"=>"14", "description"=>"asdfsaf", "contributing_user_ids"=>["7", "9", "11", ""]}, "commit"=>"Create Project"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (7, 9, 11)[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mProject Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE "projects"."title" = 'test project title' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "projects" ("title", "description", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "test project title"], ["description", "asdfsaf"], ["due_date", "2015-10-14"], ["created_at", "2015-02-06 07:30:39.389630"], ["updated_at", "2015-02-06 07:30:39.389630"]]
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "contributions" ("user_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 7], ["project_id", 9], ["created_at", "2015-02-06 07:30:39.392324"], ["updated_at", "2015-02-06 07:30:39.392324"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "contributions" ("user_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 9], ["project_id", 9], ["created_at", "2015-02-06 07:30:39.396365"], ["updated_at", "2015-02-06 07:30:39.396365"]]
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "contributions" ("user_id", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 11], ["project_id", 9], ["created_at", "2015-02-06 07:30:39.398901"], ["updated_at", "2015-02-06 07:30:39.398901"]]
+  [1m[35m (1.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 91ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/projects" for ::1 at 2015-02-05 23:30:39 -0800
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 278ms (Views: 274.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:30:39 -0800
+
+
+Started GET "/projects/2" for ::1 at 2015-02-05 23:30:41 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mTask Load (0.4ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 2]]
+  Rendered discussions/_form.html.erb (13.5ms)
+  [1m[35mDiscussion Load (0.4ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 2]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."discussion_id" = $1[0m  [["discussion_id", 4]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."discussion_id" = $1  [["discussion_id", 2]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."discussion_id" = $1[0m  [["discussion_id", 5]]
+  Rendered projects/show.html.erb within layouts/application (65.4ms)
+Completed 200 OK in 348ms (Views: 313.5ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/projects/2/tasks/new" for ::1 at 2015-02-05 23:30:44 -0800
+Processing by TasksController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered tasks/_form.html.erb (19.4ms)
+  Rendered tasks/new.html.erb within layouts/application (22.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+Completed 200 OK in 314ms (Views: 309.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:30:54 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (11.4ms)
+  [1m[36mDiscussion Load (0.3ms)[0m  [1mSELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 279ms (Views: 274.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/9/edit" for ::1 at 2015-02-05 23:31:46 -0800
+Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" INNER JOIN "contributions" ON "users"."id" = "contributions"."user_id" WHERE "contributions"."project_id" = $1  [["project_id", 9]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered projects/_form.html.erb (41.2ms)
+  Rendered projects/edit.html.erb within layouts/application (43.9ms)
+Completed 200 OK in 308ms (Views: 301.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:32:52 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (11.3ms)
+  [1m[36mDiscussion Load (0.3ms)[0m  [1mSELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 272ms (Views: 266.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:32:53 -0800
+
+
+Started GET "/projects/9/tasks/new" for ::1 at 2015-02-05 23:33:28 -0800
+Processing by TasksController#new as HTML
+  Parameters: {"project_id"=>"9"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  Rendered tasks/_form.html.erb (38.5ms)
+  Rendered tasks/new.html.erb within layouts/application (40.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+Completed 200 OK in 282ms (Views: 278.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/projects/9/tasks" for ::1 at 2015-02-05 23:33:34 -0800
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NdlmuBGjJ8iD97WZCxT37mYKb1McnLnpMwyaIX63GtKMGSC5LfBMHKd5RwPJHDicXluGZ2+kixsPiWUXCFaaew==", "task"=>{"title"=>"task 1", "due_date(1i)"=>"2015", "due_date(2i)"=>"2", "due_date(3i)"=>"5", "body"=>""}, "commit"=>"Add to Project", "project_id"=>"9"}
+  [1m[35mProject Load (1.0ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mTask Exists (0.4ms)[0m  SELECT  1 AS one FROM "tasks" WHERE ("tasks"."title" = 'task 1' AND "tasks"."project_id" = 9) LIMIT 1
+  [1m[36mSQL (41.1ms)[0m  [1mINSERT INTO "tasks" ("title", "body", "due_date", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "task 1"], ["body", ""], ["due_date", "2015-02-05"], ["project_id", 9], ["created_at", "2015-02-06 07:33:34.801486"], ["updated_at", "2015-02-06 07:33:34.801486"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/projects/9
+Completed 302 Found in 54ms (ActiveRecord: 44.0ms)
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:33:34 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (20.6ms)
+  [1m[35mDiscussion Load (0.3ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 303ms (Views: 297.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:33:35 -0800
+
+
+Started GET "/projects/9/tasks/new" for ::1 at 2015-02-05 23:33:36 -0800
+Processing by TasksController#new as HTML
+  Parameters: {"project_id"=>"9"}
+  [1m[36mProject Load (1.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  Rendered tasks/_form.html.erb (19.4ms)
+  Rendered tasks/new.html.erb within layouts/application (21.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+Completed 200 OK in 287ms (Views: 282.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/projects/9/tasks" for ::1 at 2015-02-05 23:33:43 -0800
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xAudG6fx74cmvKYR+e1bOyWo9lxaSOiJo1quGIC8BsN9y9sam6KEUwIyVIs75ZRJHfkfaClw2nuf31Eu9l2Gag==", "task"=>{"title"=>"task2", "due_date(1i)"=>"2015", "due_date(2i)"=>"2", "due_date(3i)"=>"5", "body"=>""}, "commit"=>"Add to Project", "project_id"=>"9"}
+  [1m[36mProject Load (1.5ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mTask Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "tasks" WHERE ("tasks"."title" = 'task2' AND "tasks"."project_id" = 9) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tasks" ("title", "body", "due_date", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "task2"], ["body", ""], ["due_date", "2015-02-05"], ["project_id", 9], ["created_at", "2015-02-06 07:33:43.035010"], ["updated_at", "2015-02-06 07:33:43.035010"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/9
+Completed 302 Found in 13ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:33:43 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mTask Load (0.8ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (14.6ms)
+  [1m[36mDiscussion Load (0.3ms)[0m  [1mSELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 307ms (Views: 301.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:33:43 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:34:34 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (12.4ms)
+  [1m[36mDiscussion Load (0.3ms)[0m  [1mSELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 292ms (Views: 286.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:34:35 -0800
+
+
+Started GET "/projects/9/tasks/new" for ::1 at 2015-02-05 23:34:37 -0800
+Processing by TasksController#new as HTML
+  Parameters: {"project_id"=>"9"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  Rendered tasks/_form.html.erb (17.9ms)
+  Rendered tasks/new.html.erb within layouts/application (19.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+Completed 200 OK in 282ms (Views: 279.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/projects/9/tasks" for ::1 at 2015-02-05 23:34:40 -0800
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UNGKWeSule/nxE/s2ybRzTc8ndDWcoU1s7dl4lpxeW3pEcxY2P3+O8NKvXYZLh6/D2105KVKt8ePMprULJD5xA==", "task"=>{"title"=>"task3", "due_date(1i)"=>"2015", "due_date(2i)"=>"2", "due_date(3i)"=>"5", "body"=>""}, "commit"=>"Add to Project", "project_id"=>"9"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mTask Exists (0.4ms)[0m  SELECT  1 AS one FROM "tasks" WHERE ("tasks"."title" = 'task3' AND "tasks"."project_id" = 9) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "tasks" ("title", "body", "due_date", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "task3"], ["body", ""], ["due_date", "2015-02-05"], ["project_id", 9], ["created_at", "2015-02-06 07:34:40.134075"], ["updated_at", "2015-02-06 07:34:40.134075"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/projects/9
+Completed 302 Found in 12ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:34:40 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.4ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (11.6ms)
+  [1m[35mDiscussion Load (0.3ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 296ms (Views: 287.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:34:40 -0800
+
+
+Started GET "/projects/9/tasks/63" for ::1 at 2015-02-05 23:34:47 -0800
+Processing by TasksController#show as HTML
+  Parameters: {"project_id"=>"9", "id"=>"63"}
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1[0m  [["id", 63]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  Rendered tasks/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+Completed 200 OK in 263ms (Views: 259.7ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/projects/9/tasks/63/mark_complete" for ::1 at 2015-02-05 23:34:49 -0800
+Processing by TasksController#mark_complete as HTML
+  Parameters: {"authenticity_token"=>"rueN6GvfRD/PjD/mWyKVuoDIKWbIxuJKLhqhxy57Q0wXJ8vpV4wv6+sCzXyZKlrIuJnAUrv+0LgSn17xWJrD5Q==", "project_id"=>"9", "id"=>"63"}
+  [1m[35mTask Load (1.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1  [["id", 63]]
+  [1m[36mProject Load (3.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mTask Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "tasks" WHERE ("tasks"."title" = 'task3' AND "tasks"."id" != 63 AND "tasks"."project_id" = 9) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "tasks" SET "completed_status" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3  [["completed_status", "t"], ["updated_at", "2015-02-06 07:34:49.131278"], ["id", 63]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/9/tasks/63
+Completed 302 Found in 18ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/projects/9/tasks/63" for ::1 at 2015-02-05 23:34:49 -0800
+Processing by TasksController#show as HTML
+  Parameters: {"project_id"=>"9", "id"=>"63"}
+  [1m[35mTask Load (0.5ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1  [["id", 63]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  Rendered tasks/show.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+Completed 200 OK in 252ms (Views: 244.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:34:49 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:34:51 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (12.0ms)
+  [1m[35mDiscussion Load (0.3ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 272ms (Views: 265.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects/9/tasks/61" for ::1 at 2015-02-05 23:34:54 -0800
+Processing by TasksController#show as HTML
+  Parameters: {"project_id"=>"9", "id"=>"61"}
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1[0m  [["id", 61]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  Rendered tasks/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+Completed 200 OK in 269ms (Views: 265.7ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/projects/9/tasks/61/mark_complete" for ::1 at 2015-02-05 23:34:56 -0800
+Processing by TasksController#mark_complete as HTML
+  Parameters: {"authenticity_token"=>"0lWmiWWjuMcAEOWIeSjXqnT9yHTZn9RAZs4NkVqdQdVrleCIWfDTEySeFxK7IBjYTKwhQKqn5rJaS/KnLHzBfA==", "project_id"=>"9", "id"=>"61"}
+  [1m[35mTask Load (1.6ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1  [["id", 61]]
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mTask Exists (1.7ms)[0m  [1mSELECT  1 AS one FROM "tasks" WHERE ("tasks"."title" = 'task 1' AND "tasks"."id" != 61 AND "tasks"."project_id" = 9) LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  UPDATE "tasks" SET "completed_status" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3  [["completed_status", "t"], ["updated_at", "2015-02-06 07:34:56.157500"], ["id", 61]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/9/tasks/61
+Completed 302 Found in 16ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/projects/9/tasks/61" for ::1 at 2015-02-05 23:34:56 -0800
+Processing by TasksController#show as HTML
+  Parameters: {"project_id"=>"9", "id"=>"61"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1  [["id", 61]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  Rendered tasks/show.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+Completed 200 OK in 270ms (Views: 266.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:34:56 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:34:57 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (11.7ms)
+  [1m[35mDiscussion Load (2.7ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 281ms (Views: 272.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:35:43 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (1.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (11.4ms)
+  [1m[35mDiscussion Load (1.1ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 312ms (Views: 305.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:35:43 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:35:43 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:35:43 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:35:43 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:35:43 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:35:43 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:35:43 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:35:43 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:35:43 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:35:43 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:35:43 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:35:43 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:35:43 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:35:43 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:35:44 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:35:44 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:35:44 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:35:44 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:35:58 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (11.9ms)
+  [1m[35mDiscussion Load (0.3ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 291ms (Views: 284.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:35:58 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:35:58 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:35:58 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:35:58 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:35:58 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:35:58 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:35:58 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:35:58 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:35:58 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:35:58 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:35:58 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:35:58 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:35:58 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:35:58 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:35:58 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:35:58 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:35:59 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:35:59 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:38:34 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (12.0ms)
+  [1m[35mDiscussion Load (0.3ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 286ms (Views: 280.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:38:34 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:41:04 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (11.2ms)
+  [1m[35mDiscussion Load (0.2ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 292ms (Views: 286.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:41:04 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:41:46 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (11.0ms)
+  [1m[35mDiscussion Load (0.3ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 294ms (Views: 286.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:41:46 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:42:48 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (12.8ms)
+  [1m[35mDiscussion Load (0.2ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (42.7ms)
+Completed 200 OK in 300ms (Views: 294.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:42:48 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:43:08 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.4ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (11.9ms)
+  [1m[35mDiscussion Load (0.3ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 307ms (Views: 299.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:43:08 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:43:08 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:43:08 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:43:08 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:43:09 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:43:09 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:43:09 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:43:09 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:43:09 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:43:09 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:43:09 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:43:09 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:43:09 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:43:09 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:43:09 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:43:09 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:43:09 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:43:09 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:44:31 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (15.6ms)
+  [1m[35mDiscussion Load (0.3ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 302ms (Views: 296.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:44:31 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:44:31 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:44:31 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:44:31 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:44:32 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:44:32 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:44:32 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:44:32 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:44:32 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:44:32 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:44:32 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:44:32 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:44:32 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:44:32 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:44:32 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:44:32 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:44:32 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:44:32 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:45:23 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (17.1ms)
+  [1m[35mDiscussion Load (1.0ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 300ms (Views: 291.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:45:23 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:45:23 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:45:23 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:45:23 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:45:23 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:45:23 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:45:23 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:45:23 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:45:23 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:45:23 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:45:23 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:45:23 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:45:23 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:45:23 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:45:23 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:45:23 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:45:24 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:45:24 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:45:50 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (13.1ms)
+  [1m[35mDiscussion Load (0.6ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 301ms (Views: 292.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:45:51 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:47:07 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (12.2ms)
+  [1m[35mDiscussion Load (0.3ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 291ms (Views: 284.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:47:08 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:47:54 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (11.1ms)
+  [1m[35mDiscussion Load (0.3ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 297ms (Views: 291.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:47:54 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:48:23 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (13.0ms)
+  [1m[35mDiscussion Load (0.2ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 305ms (Views: 298.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:48:24 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:49:01 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (12.2ms)
+  [1m[35mDiscussion Load (0.3ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 297ms (Views: 291.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:49:02 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:50:31 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+Completed 500 Internal Server Error in 60ms
+
+NoMethodError (undefined method `contributors' for #<Project:0x000001068d0fc0>):
+  app/controllers/projects_controller.rb:33:in `show'
+
+
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (10.2ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/merlekinkade/.rvm/gems/ruby-2.1.5/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (40.4ms)
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:51:01 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (13.5ms)
+  [1m[35mDiscussion Load (0.3ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 391ms (Views: 309.7ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:51:02 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:53:01 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (1.0ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" INNER JOIN "contributions" ON "users"."id" = "contributions"."user_id" WHERE "contributions"."project_id" = $1  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (13.2ms)
+  [1m[36mDiscussion Load (0.3ms)[0m  [1mSELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 780ms (Views: 772.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:53:02 -0800
+
+
+Started GET "/projects/9/edit" for ::1 at 2015-02-05 23:53:09 -0800
+Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" INNER JOIN "contributions" ON "users"."id" = "contributions"."user_id" WHERE "contributions"."project_id" = $1  [["project_id", 9]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered projects/_form.html.erb (40.7ms)
+  Rendered projects/edit.html.erb within layouts/application (42.6ms)
+Completed 200 OK in 318ms (Views: 308.8ms | ActiveRecord: 3.2ms)
+
+
+Started PATCH "/projects/9" for ::1 at 2015-02-05 23:53:16 -0800
+Processing by ProjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xs9nxHwtBa10y2rS/y2381yHhy3gZdOveBVqalkR64R/DyHFQH5ueVBFmEg9JXiBZNZuGZNd4V1EkJVcL/BrLQ==", "project"=>{"title"=>"test project title", "due_date(1i)"=>"2015", "due_date(2i)"=>"10", "due_date(3i)"=>"14", "description"=>"asdfsaf", "contributing_user_ids"=>["1", "7", "11", ""]}, "commit"=>"Update Project", "id"=>"9"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+  [1m[36mProject Load (0.9ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 7, 11)[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "contributions" ON "users"."id" = "contributions"."user_id" WHERE "contributions"."project_id" = $1  [["project_id", 9]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "contributions" WHERE "contributions"."project_id" = $1 AND "contributions"."user_id" = 9[0m  [["project_id", 9]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "contributions" ("project_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["project_id", 9], ["user_id", 1], ["created_at", "2015-02-06 07:53:16.411252"], ["updated_at", "2015-02-06 07:53:16.411252"]]
+  [1m[36mProject Exists (2.8ms)[0m  [1mSELECT  1 AS one FROM "projects" WHERE ("projects"."title" = 'test project title' AND "projects"."id" != 9) LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/projects/9
+Completed 302 Found in 47ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:53:16 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.7ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.5ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" INNER JOIN "contributions" ON "users"."id" = "contributions"."user_id" WHERE "contributions"."project_id" = $1  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (14.0ms)
+  [1m[36mDiscussion Load (0.3ms)[0m  [1mSELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 306ms (Views: 295.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:53:16 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:53:38 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1  [["project_id", 9]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "contributions" ON "users"."id" = "contributions"."user_id" WHERE "contributions"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (12.5ms)
+  [1m[35mDiscussion Load (0.3ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 303ms (Views: 295.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:39 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-05 23:53:56 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "contributions" ON "users"."id" = "contributions"."user_id" WHERE "contributions"."project_id" = $1  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (11.7ms)
+  [1m[36mDiscussion Load (0.3ms)[0m  [1mSELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 294ms (Views: 288.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-05 23:53:56 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:57 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:57 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:57 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:57 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:57 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-05 23:53:57 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-05 23:53:57 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-05 23:53:57 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-05 23:53:57 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-05 23:53:57 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:57 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:57 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:57 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:57 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:57 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-05 23:53:57 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-05 23:53:57 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-06 00:10:19 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1  [["project_id", 9]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "contributions" ON "users"."id" = "contributions"."user_id" WHERE "contributions"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (12.3ms)
+  [1m[35mDiscussion Load (0.3ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 382ms (Views: 298.3ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-06 00:10:20 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-06 00:10:34 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "contributions" ON "users"."id" = "contributions"."user_id" WHERE "contributions"."project_id" = $1  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (12.2ms)
+  [1m[36mDiscussion Load (1.0ms)[0m  [1mSELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 298ms (Views: 289.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:34 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-06 00:10:50 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1  [["project_id", 9]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "contributions" ON "users"."id" = "contributions"."user_id" WHERE "contributions"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (11.1ms)
+  [1m[35mDiscussion Load (0.3ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 315ms (Views: 309.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-06 00:10:50 -0800
+
+
+Started GET "/projects/9/tasks/62" for ::1 at 2015-02-06 00:10:53 -0800
+Processing by TasksController#show as HTML
+  Parameters: {"project_id"=>"9", "id"=>"62"}
+  [1m[36mTask Load (0.5ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1[0m  [["id", 62]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  Rendered tasks/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+Completed 200 OK in 269ms (Views: 263.0ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/projects/9/tasks/62/mark_complete" for ::1 at 2015-02-06 00:10:54 -0800
+Processing by TasksController#mark_complete as HTML
+  Parameters: {"authenticity_token"=>"rOPqfJ2B+1s3xznAdNw14NKBiKhfX4ER9bYUHvTRKdcVI6x9odKQjxNJy1q21PqS6tBhnCxns+PJM+sogjCpfg==", "project_id"=>"9", "id"=>"62"}
+  [1m[35mTask Load (3.5ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1  [["id", 62]]
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mTask Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "tasks" WHERE ("tasks"."title" = 'task2' AND "tasks"."id" != 62 AND "tasks"."project_id" = 9) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "tasks" SET "completed_status" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3  [["completed_status", "t"], ["updated_at", "2015-02-06 08:10:54.377089"], ["id", 62]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/9/tasks/62
+Completed 302 Found in 19ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/projects/9/tasks/62" for ::1 at 2015-02-06 00:10:54 -0800
+Processing by TasksController#show as HTML
+  Parameters: {"project_id"=>"9", "id"=>"62"}
+  [1m[35mTask Load (0.4ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1  [["id", 62]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  Rendered tasks/show.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+Completed 200 OK in 266ms (Views: 262.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:10:54 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-06 00:10:56 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.4ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "contributions" ON "users"."id" = "contributions"."user_id" WHERE "contributions"."project_id" = $1  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (14.9ms)
+  [1m[36mDiscussion Load (0.5ms)[0m  [1mSELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 281ms (Views: 273.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/projects/9/tasks/61" for ::1 at 2015-02-06 00:10:58 -0800
+Processing by TasksController#show as HTML
+  Parameters: {"project_id"=>"9", "id"=>"61"}
+  [1m[35mTask Load (0.6ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1  [["id", 61]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  Rendered tasks/show.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+Completed 200 OK in 269ms (Views: 265.9ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/projects/9/tasks/61/mark_incomplete" for ::1 at 2015-02-06 00:10:59 -0800
+Processing by TasksController#mark_incomplete as HTML
+  Parameters: {"authenticity_token"=>"8wvA7srmHPJJL6DxXJBQ6M8gAeLEJoRg1lcMwLFKU/9Ky4bv9rV3Jm2hUmuemJ+a93Ho1rcetpLq0vP2x6vTVg==", "project_id"=>"9", "id"=>"61"}
+  [1m[36mTask Load (3.6ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1[0m  [["id", 61]]
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mTask Exists (0.5ms)[0m  SELECT  1 AS one FROM "tasks" WHERE ("tasks"."title" = 'task 1' AND "tasks"."id" != 61 AND "tasks"."project_id" = 9) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tasks" SET "completed_status" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3[0m  [["completed_status", "f"], ["updated_at", "2015-02-06 08:10:59.608993"], ["id", 61]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/projects/9/tasks/61
+Completed 302 Found in 15ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/projects/9/tasks/61" for ::1 at 2015-02-06 00:10:59 -0800
+Processing by TasksController#show as HTML
+  Parameters: {"project_id"=>"9", "id"=>"61"}
+  [1m[36mTask Load (1.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT 1[0m  [["id", 61]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  Rendered tasks/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+Completed 200 OK in 280ms (Views: 272.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:59 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:59 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:59 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:10:59 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:11:00 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:11:00 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-06 00:11:00 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-06 00:11:00 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-06 00:11:00 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-06 00:11:00 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-06 00:11:00 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:11:00 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:11:00 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:11:00 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:11:00 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:11:00 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:11:00 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-06 00:11:00 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-06 00:11:00 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1  [["project_id", 9]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "contributions" ON "users"."id" = "contributions"."user_id" WHERE "contributions"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (12.3ms)
+  [1m[35mDiscussion Load (0.3ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 286ms (Views: 278.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects/9" for ::1 at 2015-02-06 00:11:48 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "contributions" ON "users"."id" = "contributions"."user_id" WHERE "contributions"."project_id" = $1  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (12.2ms)
+  [1m[36mDiscussion Load (0.4ms)[0m  [1mSELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 296ms (Views: 288.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-06 00:11:49 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-06 00:12:14 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 15]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1  [["project_id", 9]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "contributions" ON "users"."id" = "contributions"."user_id" WHERE "contributions"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (11.9ms)
+  [1m[35mDiscussion Load (1.2ms)[0m  SELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 301ms (Views: 293.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-06 00:12:14 -0800
+
+
+Started GET "/projects/9" for ::1 at 2015-02-06 00:13:31 -0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 9]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "contributions" ON "users"."id" = "contributions"."user_id" WHERE "contributions"."project_id" = $1  [["project_id", 9]]
+  Rendered discussions/_form.html.erb (11.7ms)
+  [1m[36mDiscussion Load (0.3ms)[0m  [1mSELECT "discussions".* FROM "discussions" WHERE "discussions"."project_id" = $1[0m  [["project_id", 9]]
+  Rendered projects/show.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 292ms (Views: 286.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/bootstrap_and_override-68ce739cbaed853f1efea82905a59a87.css?body=1" for ::1 at 2015-02-06 00:13:32 -0800
+
+
+Started GET "/assets/discussions-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:13:32 -0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:13:32 -0800
+
+
+Started GET "/assets/application-56f321a4934dcd05431301054f6f09a2.css?body=1" for ::1 at 2015-02-06 00:13:32 -0800
+
+
+Started GET "/assets/projects-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:13:32 -0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-02-06 00:13:32 -0800
+
+
+Started GET "/assets/comments-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:13:32 -0800
+
+
+Started GET "/assets/home-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:13:32 -0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-02-06 00:13:32 -0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-02-06 00:13:32 -0800
+
+
+Started GET "/assets/comments-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:13:32 -0800
+
+
+Started GET "/assets/tasts-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-02-06 00:13:32 -0800
+
+
+Started GET "/assets/discussions-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:13:32 -0800
+
+
+Started GET "/assets/home-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:13:32 -0800
+
+
+Started GET "/assets/projects-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:13:32 -0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:13:32 -0800
+
+
+Started GET "/assets/tasts-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-02-06 00:13:32 -0800
+
+
+Started GET "/assets/application-75ea6917f72d6df648cce0e65e850358.js?body=1" for ::1 at 2015-02-06 00:13:32 -0800

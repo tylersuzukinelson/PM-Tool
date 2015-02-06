@@ -1,40 +1,50 @@
 <div class="container">
 	<h3><%= @project.title %></h3> 
 	<h5>Due Date: <%= @project.due_date %></h5>
-	<br><br>
-	<h4>Description: <%= @project.description %></h4>
+	
+	<h4>Description:</h4>
+	<div class="col-md-4"></div>
+	<div class="col-md-8"><%= @project.description %></div> 
 
 	<br>
-	<%= link_to "Add Task", new_project_task_path(@project), class: "btn btn-sm btn-info"%>
+
 	<%= link_to "Edit", edit_project_path(@project), class: "btn btn-sm btn-info"%>
 	<%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-sm btn-danger"%>
 	
 
 	<!-- add project tasks here -->
+	<div class="row">
+		<div class="col-md-6 completed-tasks">
+			<h4>Completed Tasks</h4>
+				<% @project.tasks.each do |task| %> 
+ 	   				<% if task.completed_status %> 		
+	    				<%= link_to task.title, project_task_path(@project, task)%><br>
+	    			<% end %>
+				<% end %>
+		</div>
 
-	<div id="project-tasks">
-	  <% @project.tasks.each do |task| %>
-	    <%#= render partial: "/tasks/task", locals: {task: task} %>
-	    <% if task.completed_status %> 
-	    	<div class="completed-tasks">
-	    		<h4>Completed Tasks</h4>
-	    		<%= link_to task.title, project_task_path(@project, task) %>
-	    	</div>
-	    <% else %>
-	    	<div class="incomplete-tasks">
-	    		<h4>Incomplete Tasks</h4>
-	    		<%= link_to task.title, project_task_path(@project, task) %>
-	    	</div>
-	    <% end %>
-	  <% end %>  
+		<div class="col-md-6 incomplete-tasks">
+			<h4>Incomplete Tasks</h4>
+	    		<% @project.tasks.each do |task| %> 
+	    		 	<% if !task.completed_status %> 		
+		    			<%= link_to task.title, project_task_path(@project, task)%><br>
+					<% end %> 	
+				<% end %>  
+		</div>	 	  
 	</div>
 
+    <br><%= link_to "Add Task", new_project_task_path(@project), class: "btn btn-sm btn-info"%>
+	
+	<h4>Contributors</h4>
+	<% @contributors.each do |contributor| %>
+		<%= contributor.full_name %><br>
+	<% end %>
 
 	<hr>
 	<h4>Create a Discussion</h4>
 	<%= render partial: "/discussions/form" %>
 
-	<h1>Discussions</h1>
+	<h1>Current Discussions</h1>
 	<% @project.discussions.each do |discussion| %>
 	    <%= discussion.title %><br>
 	    <%= discussion.description %>
