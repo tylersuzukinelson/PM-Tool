@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
   has_many :favorites, dependent: :destroy
   has_many :favorite_projects, through: :favorites, source: :project
 
+  has_many :tags, dependent: :destroy
+  has_many :tagged_projects, through: :tags, source: :project
+
 	def full_name
 		if first_name || last_name
 		  "#{first_name} #{last_name}".squeeze(" ").strip

@@ -35,6 +35,8 @@ class ProjectsController < ApplicationController
 		@task = Task.new
 		@task.project = @project
 
+		@tag = Tag.new
+
 		@contributors = @project.contributing_users
 	end
 

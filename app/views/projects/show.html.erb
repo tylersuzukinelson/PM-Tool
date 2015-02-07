@@ -52,6 +52,13 @@
 		<%= contributor.full_name %><br>
 	<% end %>
 
+	<!-- add tags here -->
+	<%= render partial: "/tags/form" %>
+	<h5>Tags</h5>
+	<% @project.tags.each do |tag| %>
+		<%= tag.name %>
+	<% end %>
+
 	<hr>
 	<h4>Create a Discussion</h4>
 	<%= render partial: "/discussions/form" %>

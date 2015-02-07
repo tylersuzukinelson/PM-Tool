@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 	resources :projects do
 		resources :discussions, only: [:create, :update, :edit, :destroy]
 		resources :favorites, only: [:create, :destroy]
+		resources :tags, only: [:create]
 		resources :tasks do
 			member do
 			patch :mark_complete

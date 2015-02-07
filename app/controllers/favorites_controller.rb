@@ -22,5 +22,4 @@ class FavoritesController < ApplicationController
 			redirect_to @project
 		end
 	end
-
 end
