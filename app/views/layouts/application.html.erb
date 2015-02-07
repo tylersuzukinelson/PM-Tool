@@ -22,6 +22,10 @@
     <%= link_to "Sign In", new_user_session_path %>
   <% end %>
 
+  <hr>
+  <%= flash[:notice] || flash[:alert] %>
+  <hr>
+
 <%= yield %>
 
 </body>

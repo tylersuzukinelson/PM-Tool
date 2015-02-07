@@ -8,9 +8,11 @@ class CommentsController < ApplicationController
 
 		#@comment.answer.user = current.user
 
-		@comment.save
-
-		redirect_to @discussion.project, notice: "New comment added"
+		if @comment.save
+			redirect_to @discussion.project, notice: "New comment added"
+		else
+			redirect_to @discussion.project, notice: "Comment not added"
+		end
 	end
 
 	def edit

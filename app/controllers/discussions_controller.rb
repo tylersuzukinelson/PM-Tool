@@ -4,16 +4,13 @@ class DiscussionsController < ApplicationController
 	#before_action :authenticate_user!
 
 	def create
-		#render text: params
 		@discussion = Discussion.new discussion_params
-
-
 		@discussion.project = @project
 
 		if @discussion.save
-			redirect_to project_path(@project), notice: "Discussion susccessfully created!"
+			redirect_to @project, notice: "Discussion susccessfully created!"
 		else
-			render "projects/show"
+			redirect_to @project, alert: "Discussion not created"
 		end
 	end
 
