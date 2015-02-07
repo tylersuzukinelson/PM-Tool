@@ -7,8 +7,13 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
 
+  has_many :projects, dependent: :nullify
+
   has_many :contributions, dependent: :destroy
   has_many :contributed_projects, through: :contributions, source: :project
+
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_projects, through: :favorites, source: :project
 
 	def full_name
 		if first_name || last_name
@@ -17,4 +22,8 @@ class User < ActiveRecord::Base
 		  email
 		end
 	end
+
+  def has_favorited?(project)
+    favorite_projects.include?(project)
+  end
 end

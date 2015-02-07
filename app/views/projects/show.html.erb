@@ -1,5 +1,6 @@
 <div class="container">
 	<h3><%= @project.title %></h3> 
+	<h5>Created By: <%= @project.user.full_name %></h5>
 	<h5>Due Date: <%= @project.due_date %></h5>
 	
 	<h4>Description:</h4>
@@ -7,6 +8,17 @@
 	<div class="col-md-8"><%= @project.description %></div> 
 
 	<br>
+
+	<% if (@project.user != current_user) %>
+		<% if user_signed_in? && current_user.has_favorited?(@project) %>
+			<% @favorite = current_user.favorites.find_by_project_id(@project)%>
+
+			<%= link_to "Un-Favorite", project_favorite_path(@project, @favorite), class: "btn btn-sm btn-default", method: :delete %>
+		<% else %>
+			<%= link_to "Favorite", project_favorites_path(@project), class: "btn btn-sm btn-default", method: :post %>	
+
+		<% end %>
+	<% end %>
 
 	<%= link_to "Edit", edit_project_path(@project), class: "btn btn-sm btn-info"%>
 	<%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-sm btn-danger"%>
