@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
 
   has_many :projects, dependent: :nullify
+  has_many :tasks, dependent: :nullify
 
   has_many :contributions, dependent: :destroy
   has_many :contributed_projects, through: :contributions, source: :project

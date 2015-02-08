@@ -6,6 +6,7 @@ class DiscussionsController < ApplicationController
 	def create
 		@discussion = Discussion.new discussion_params
 		@discussion.project = @project
+		@discussion.user = current_user
 
 		if @discussion.save
 			redirect_to @project, notice: "Discussion susccessfully created!"
@@ -30,8 +31,6 @@ class DiscussionsController < ApplicationController
 	end
 
 	def destroy
-		#@discussion = current_user.answers.find params[:id]
-		
 		@discussion = Discussion.find params[:id]
 
 		@discussion.destroy

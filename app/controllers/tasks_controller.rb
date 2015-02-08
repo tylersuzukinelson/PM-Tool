@@ -14,6 +14,10 @@ class TasksController < ApplicationController
 	def create
 		@project = Project.find params[:project_id]
 		@task = Task.new task_params
+
+		@task.user = current_user
+
+
 		@task.project = @project
 
 		if @task.save
@@ -43,6 +47,11 @@ class TasksController < ApplicationController
 	def mark_complete
 		@project = Project.find params[:project_id]
 		@task.update(completed_status: true)
+
+		if current_user != @task.user
+			TaskMailer.notify_task_owner(@task).deliver_later
+		end
+
 		redirect_to project_task_path(@project, @task), notice: "Task successfully updated!"
 	end
 
