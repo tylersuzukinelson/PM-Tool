@@ -55,9 +55,7 @@
 	<!-- add tags here -->
 	<%= render partial: "/tags/form" %>
 	<h5>Tags</h5>
-	<% @project.tags.each do |tag| %>
-		<%= tag.name %>
-	<% end %>
+	<%= @all_tags.join(' ') %>
 
 	<hr>
 	<h4>Create a Discussion</h4>
