@@ -51,12 +51,10 @@
 	<% @contributors.each do |contributor| %>
 		<%= contributor.full_name %><br>
 	<% end %>
+	<br>
 
 	<!-- add tags here -->
-	<%= render partial: "/tags/form" %>
-	<h5>Tags</h5>
-	<%= @all_tags.join(' ') %>
-
+	<p>Tags: <%= raw @project.tags.map(&:name).map { |tag| link_to tag, "#" }.join(', ') %></p>
 
 	<hr>
 	<h4>Create a Discussion</h4>

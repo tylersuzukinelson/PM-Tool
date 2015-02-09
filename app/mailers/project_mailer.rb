@@ -6,7 +6,7 @@ class ProjectMailer < ApplicationMailer
   timezone 'US/Pacific'
   queue 'slow-jobs'
 
-	def update_project_owner(project)
+	def perform(project)
 		@project = project
 		@tasks = @project.tasks
 		@discussions = @project.discussions

@@ -10,6 +10,8 @@
 		<br>
 
 		<%= f.association :contributing_users, as: :check_boxes, label_method: :full_name %>
+		<br>
+		<%= f.input :tag_list, label: 'Add Tags (separated by commas)'%>
 
 		<%= f.submit class: "btn btn-submit" %>
 	</div>

@@ -68,7 +68,7 @@ private
 	end
 
 	def project_params
-		project_params = params.require(:project).permit(:title, :description, :due_date, {contributing_user_ids: []})
+		project_params = params.require(:project).permit(:title, :description, :due_date, :tag_list, {contributing_user_ids: []})
 	end
 
 	def to_tag_array(tags)
