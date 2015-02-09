@@ -49,7 +49,8 @@ class TasksController < ApplicationController
 		@task.update(completed_status: true)
 
 		if current_user != @task.user
-			TaskMailer.notify_task_owner(@task).deliver_later
+			#TaskMailer.notify_task_owner(@task).deliver_later
+			TaskMailer.delay.notify_task_owner(@task)
 		end
 
 		redirect_to project_task_path(@project, @task), notice: "Task successfully updated!"

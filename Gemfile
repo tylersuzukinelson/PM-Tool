@@ -33,6 +33,9 @@ gem 'devise'
 gem 'hirb'
 gem 'awesome_print'
 gem 'interactive_editor'
+gem 'delayed_job_active_record'
+gem "delayed_job_web"
+gem 'delayed_job_recurring'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

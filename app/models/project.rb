@@ -17,5 +17,9 @@ class Project < ActiveRecord::Base
 	has_many :tagged_users, through: :tags, source: :user
 	
 	validates :title, presence: true, uniqueness: true
+
+	# def send_update_email
+	# 	ProjectMailer.delay.update_project_owner(self)
+	# end
 	
 end

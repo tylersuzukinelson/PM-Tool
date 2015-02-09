@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   	devise_for :users, :controllers => { :registrations => "registrations" }
+  	match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
+
 
 	root "home#index"
 

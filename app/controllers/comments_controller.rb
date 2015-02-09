@@ -6,11 +6,10 @@ class CommentsController < ApplicationController
 
 		@comment.discussion = @discussion
 
-		#@comment.answer.user = current_user
-
 		if @comment.save
 			if current_user != @comment.discussion.user
-				DiscussionMailer.notify_discussion_owner(@comment).deliver_later
+				#DiscussionMailer.notify_discussion_owner(@comment).deliver_later
+				DiscussionMailer.delay.notify_discussion_owner(@comment)
 			end
 
 			redirect_to @discussion.project, notice: "New comment added"

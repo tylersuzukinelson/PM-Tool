@@ -16,6 +16,7 @@ class ProjectsController < ApplicationController
 
 
 		if @project.save
+			ProjectMailer.schedule!
 			redirect_to projects_path, notice: "Project successfully created!"
 		else
 			render :new
@@ -53,6 +54,8 @@ class ProjectsController < ApplicationController
 
 	def destroy
 		@project = Project.find params[:id]
+		ProjectMailer.unschedule
+
 
 		@project.destroy
 		redirect_to projects_path, notice: "Project successfully deleted!"
@@ -72,12 +75,14 @@ private
 		temp_tag_array = []
 		tag_array = []
 
-		tags.each do |tag|
-			temp_tag_array << tag.name.split(',')
+		if !tags.nil?
+			tags.each do |tag|
+				temp_tag_array << tag.name.split(',')
 
-			temp_tag_array.each do |item|
-				unless tag_array.include? item
-					tag_array << item
+				temp_tag_array.each do |item|
+					unless tag_array.include? item
+						tag_array << item
+					end
 				end
 			end
 		end
