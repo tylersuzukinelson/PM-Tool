@@ -16,14 +16,15 @@ class TasksController < ApplicationController
 		@task = Task.new task_params
 
 		@task.user = current_user
-
-
 		@task.project = @project
 
-		if @task.save
-			redirect_to @project, notice: "Task successfully created!"
-		else
-			render :new
+		respond_to do |format|
+			if @task.save
+				format.html {redirect_to @project, notice: "Task successfully created!"}
+				format.js {render}
+			else
+				format.js {render} 
+			end
 		end
 	end
 
