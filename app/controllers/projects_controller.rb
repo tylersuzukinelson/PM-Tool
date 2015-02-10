@@ -37,7 +37,6 @@ class ProjectsController < ApplicationController
 		@task.project = @project
 
 		@tag = Tag.new
-		@all_tags = to_tag_array(@project.tags)
 
 		@contributors = @project.contributing_users
 	end
@@ -70,24 +69,4 @@ private
 	def project_params
 		project_params = params.require(:project).permit(:title, :description, :due_date, :tag_list, {contributing_user_ids: []})
 	end
-
-	def to_tag_array(tags)
-		temp_tag_array = []
-		tag_array = []
-
-		if !tags.nil?
-			tags.each do |tag|
-				temp_tag_array << tag.name.split(',')
-
-				temp_tag_array.each do |item|
-					unless tag_array.include? item
-						tag_array << item
-					end
-				end
-			end
-		end
-
-		return tag_array
-	end
-
 end

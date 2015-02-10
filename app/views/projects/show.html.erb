@@ -6,23 +6,13 @@
 	<h4>Description:</h4>
 	<div class="col-md-4"></div>
 	<div class="col-md-8"><%= @project.description %></div> 
-
 	<br>
 
-	<% if (@project.user != current_user) %>
-		<% if user_signed_in? && current_user.has_favorited?(@project) %>
-			<% @favorite = current_user.favorites.find_by_project_id(@project)%>
-
-			<%= link_to "Un-Favorite", project_favorite_path(@project, @favorite), class: "btn btn-sm btn-default", method: :delete %>
-		<% else %>
-			<%= link_to "Favorite", project_favorites_path(@project), class: "btn btn-sm btn-default", method: :post %>	
-
-		<% end %>
+	<h4>Contributors</h4>
+	<% @contributors.each do |contributor| %>
+		<%= contributor.full_name %><br>
 	<% end %>
-
-	<%= link_to "Edit", edit_project_path(@project), class: "btn btn-sm btn-info"%>
-	<%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-sm btn-danger"%>
-	
+	<br>
 
 	<!-- add project tasks here -->
 	<div class="row">
@@ -45,22 +35,29 @@
 		</div>	 	  
 	</div>
 
-    <br><%= link_to "Add Task", new_project_task_path(@project), class: "btn btn-sm btn-info"%>
-	
-	<h4>Contributors</h4>
-	<% @contributors.each do |contributor| %>
-		<%= contributor.full_name %><br>
-	<% end %>
-	<br>
+	<br><%= link_to "Add Task", new_project_task_path(@project), class: "btn btn-sm btn-info"%><br><br>
 
+
+	<% if (@project.user != current_user) %>
+		<% if user_signed_in? && current_user.has_favorited?(@project) %>
+			<% @favorite = current_user.favorites.find_by_project_id(@project)%>
+
+			<%= link_to "Un-Favorite Project", project_favorite_path(@project, @favorite), class: "btn btn-sm btn-default", method: :delete %>
+		<% else %>
+			<%= link_to "Favorite Project", project_favorites_path(@project), class: "btn btn-sm btn-default", method: :post %>	
+
+		<% end %>
+	<% end %>
+
+	<%= link_to "Edit Project", edit_project_path(@project), class: "btn btn-sm btn-info"%>
+	<%= link_to "Delete Project", project_path(@project), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-sm btn-danger"%>
+	
 	<!-- add tags here -->
 	<p>Tags: <%= raw @project.tags.map(&:name).map { |tag| link_to tag, "#" }.join(', ') %></p>
 
 	<hr>
-	<h4>Create a Discussion</h4>
-	<%= render partial: "/discussions/form" %>
-
-	<h1>Current Discussions</h1>
+	
+	<h4>Current Discussions</h4>
 	<% @project.discussions.each do |discussion| %>
 	    <%= discussion.title %><br>
 	    <%= discussion.description %>
@@ -72,7 +69,7 @@
 
 
 		<%= simple_form_for [discussion, (@comment || Comment.new)], html: { class: "form-horizontal"} do |f| %>	
-			<%= f.input :body %>
+			<%= f.input :body, label: "Add a comment" %>
 			<%= f.submit class: "btn btn-info btn-sm" %>
 		<% end %>
 
@@ -87,5 +84,8 @@
 	  <hr>
 
 	<% end %>
+	<h4>Create a Discussion</h4>
+	<%= render partial: "/discussions/form" %>
+
 
 </div>
