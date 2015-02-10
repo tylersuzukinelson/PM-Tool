@@ -6,7 +6,10 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+<nav class="navbar navbar-default"> 
+
 <a href="/">Home</a>
 |
 <a href="/about">About</a>
@@ -16,15 +19,14 @@
 <a href="/projects">View all Projects</a>
 
 <% if user_signed_in? %>
-    Hello <%= current_user.first_name %>,
+    &nbsp &nbsp &nbsp Hello <%= current_user.first_name %>,
     <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
   <% else %>
     <%= link_to "Sign In", new_user_session_path %>
   <% end %>
 
-  <hr>
-  <%= flash[:notice] || flash[:alert] %>
-  <hr>
+  <br><br><p><%= flash[:notice] || flash[:alert] %></p>
+  </nav>
 
 <%= yield %>
 

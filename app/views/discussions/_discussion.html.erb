@@ -1,10 +1,9 @@
 <div id="<%= dom_id(discussion) %>">
-  <%= discussion.title %>
+  <h4><%= discussion.title %></h4>
   <%= discussion.description %>
-
-  <%= link_to "Update", edit_project_discussion_path(@project, discussion), class: "btn btn-xs btn-info" %>
-  <%= link_to "Delete", project_discussion_path(@project, discussion), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-xs btn-danger"%>
-  <hr>
+  <br>
+  <%= link_to "Update Discussion", edit_project_discussion_path(@project, discussion), class: "btn btn-xs btn-info" %>
+  <%= link_to "Delete Discussion", project_discussion_path(@project, discussion), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-xs btn-danger"%>
  
  <!-- add comment form -->
   <div class="comment-form">
@@ -19,5 +18,6 @@
     <% end %>
   </div>
 </div>
+    <hr>
 
 

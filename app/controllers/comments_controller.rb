@@ -3,14 +3,13 @@ class CommentsController < ApplicationController
 	def create
 		@discussion = Discussion.find params[:discussion_id]
 		@comment = Comment.new comment_params
-
 		@comment.discussion = @discussion
 
 		respond_to do |format|
 			if @comment.save
-				if current_user != @comment.discussion.user
-					DiscussionMailer.delay.notify_discussion_owner(@comment)
-				end
+				# if current_user != @comment.discussion.user
+				# 	DiscussionMailer.delay.notify_discussion_owner(@comment)
+				# end
 				format.html {redirect_to @discussion.project, notice: "New comment added"}
 				format.js {render}
 			else

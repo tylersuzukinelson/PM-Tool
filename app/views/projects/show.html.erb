@@ -5,19 +5,21 @@
 	
 	<h4>Description:</h4>
 	<div class="col-md-4"></div>
-	<div class="col-md-8"><%= @project.description %></div> 
+	<div class="col-md-8">
+		<p><%= @project.description %></p>
+	</div> 
 	<br>
 
 	<h4>Contributors</h4>
 	<% @contributors.each do |contributor| %>
-		<%= contributor.full_name %><br>
+		<%= contributor.full_name %>&nbsp &nbsp &nbsp &nbsp 
 	<% end %>
 	<br>
-
+	<hr>
 	<!-- add project tasks here -->
 	<div class="row">
 		<div class="col-md-6 completed-tasks">
-			<h4>Completed Tasks</h4>
+			<h5>Completed Tasks</h5>
 				<% @project.tasks.each do |task| %> 
  	   				<% if task.completed_status %> 		
 	    				<%= link_to task.title, project_task_path(@project, task)%><br>
@@ -26,7 +28,7 @@
 		</div>
 
 		<div class="col-md-6 incomplete-tasks">
-			<h4>Incomplete Tasks</h4>
+			<h5>Incomplete Tasks</h5>
 	    		<% @project.tasks.each do |task| %> 
 	    		 	<% if !task.completed_status %> 		
 		    			<%= link_to task.title, project_task_path(@project, task)%><br>
@@ -37,7 +39,7 @@
 
 	<br><%= link_to "Add Task", new_project_task_path(@project), class: "btn btn-sm btn-info", id: "new-task-link", remote: true %><br><br>
 
-
+	<!-- project favorite, edit, delete buttons here -->
 	<% if (@project.user != current_user) %>
 		<% if user_signed_in? && current_user.has_favorited?(@project) %>
 			<% @favorite = current_user.favorites.find_by_project_id(@project)%>
@@ -52,19 +54,17 @@
 	<%= link_to "Delete Project", project_path(@project), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-sm btn-danger"%>
 	
 	<!-- add tags here -->
+	<br><br>
 	<p>Tags: <%= raw @project.tags.map(&:name).map { |tag| link_to tag, "#" }.join(', ') %></p>
 	<hr>
 	
 	<!-- display discussions here -->
-	<h4>Current Discussions</h4>
+	<h3>Current Discussions</h3>
 	<div class="discussions">
   		<% @project.discussions.each do |discussion| %>
    			<%= render partial: "/discussions/discussion", locals: {discussion: discussion} %>
   		<% end %>  
 	</div>
-
-	<br><br><hr>
-
 
 	<h4>Create a Discussion</h4>
 	<div class="discussion-form">
