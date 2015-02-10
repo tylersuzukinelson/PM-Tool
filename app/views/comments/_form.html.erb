@@ -1,0 +1,4 @@
+<%= simple_form_for [discussion, (@comment || Comment.new)], html: { class: "form-horizontal"}, remote: true do |f| %>	
+	<%= f.input :body, label: "Add a comment" %>
+	<%= f.submit class: "btn btn-info btn-sm" %>
+<% end %>

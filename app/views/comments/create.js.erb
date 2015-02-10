@@ -1,0 +1,7 @@
+<% if @comment.errors.any? %>
+  $("#<%= dom_id(@discusssion) %> .comment-form").html("<%= j render partial: "/comments/form", locals: {discusssion: @discusssion} %>");
+<% else %>
+  $("#<%= dom_id(@discusssion) %> .comments").prepend("<%= j render partial: "/comments/comment",locals: {comment: @comment, discusssion: @discusssion} %>")
+  <% @comment = Comment.new %>
+  $("#<%= dom_id(@discusssion) %> .comment-form").html("<%= j render partial: "/comments/form", locals: {discusssion: @discusssion} %>");
+<% end %>

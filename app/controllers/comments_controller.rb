@@ -6,16 +6,19 @@ class CommentsController < ApplicationController
 
 		@comment.discussion = @discussion
 
-		if @comment.save
-			if current_user != @comment.discussion.user
-				#DiscussionMailer.notify_discussion_owner(@comment).deliver_later
-				DiscussionMailer.delay.notify_discussion_owner(@comment)
+		respond_to do |format|
+			if @comment.save
+				if current_user != @comment.discussion.user
+					DiscussionMailer.delay.notify_discussion_owner(@comment)
+				end
+				format.html {redirect_to @discussion.project, notice: "New comment added"}
+				format.js {render}
+			else
+				format.html {redirect_to @discussion.project, notice: "Comment not added"}
+				format.js {render}
 			end
-
-			redirect_to @discussion.project, notice: "New comment added"
-		else
-			redirect_to @discussion.project, notice: "Comment not added"
 		end
+		
 	end
 
 	def edit
@@ -38,7 +41,11 @@ class CommentsController < ApplicationController
 		@comment = Comment.find params[:id]
 
 		@comment.destroy
-		redirect_to @comment.discussion.project, notice: "Comment deleted"
+		
+		respond_to do |format|
+			format.html {redirect_to @comment.discussion.project, notice: "Comment deleted"}
+			format.js {render}
+		end
 	end
 
 private

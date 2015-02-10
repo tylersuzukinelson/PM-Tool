@@ -45,7 +45,6 @@
 			<%= link_to "Un-Favorite Project", project_favorite_path(@project, @favorite), class: "btn btn-sm btn-default", method: :delete %>
 		<% else %>
 			<%= link_to "Favorite Project", project_favorites_path(@project), class: "btn btn-sm btn-default", method: :post %>	
-
 		<% end %>
 	<% end %>
 
@@ -54,39 +53,22 @@
 	
 	<!-- add tags here -->
 	<p>Tags: <%= raw @project.tags.map(&:name).map { |tag| link_to tag, "#" }.join(', ') %></p>
-
 	<hr>
 	
 	<!-- display discussions here -->
 	<h4>Current Discussions</h4>
-	<% @project.discussions.each do |discussion| %>
-	    <%= discussion.title %><br>
-	    <%= discussion.description %>
+	<div class="discussions">
+  		<% @project.discussions.each do |discussion| %>
+   			<%= render partial: "/discussions/discussion", locals: {discussion: discussion} %>
+  		<% end %>  
+	</div>
+
+	<br><br><hr>
 
 
-		<%= link_to "Update", edit_project_discussion_path(@project, discussion), class: "btn btn-xs btn-info" %>
-		<%= link_to "Delete", project_discussion_path(@project, discussion), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-xs btn-danger"%>
-		<br><br>
-
-
-		<%= simple_form_for [discussion, (@comment || Comment.new)], html: { class: "form-horizontal"} do |f| %>	
-			<%= f.input :body, label: "Add a comment" %>
-			<%= f.submit class: "btn btn-info btn-sm" %>
-		<% end %>
-
-		 <% discussion.comments.each do |comment| %>
-	    <div class="well" >
-	      <%= comment.body %>
-		<br>
-		<%= link_to "Update", edit_discussion_comment_path(discussion, comment), class: "btn btn-xs btn-info" %>
-		<%= link_to "Delete", discussion_comment_path(discussion, comment), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-warning" %><br>
-	    </div>
-	  <% end %>
-	  <hr>
-
-	<% end %>
 	<h4>Create a Discussion</h4>
-	<%= render partial: "/discussions/form" %>
+	<div class="discussion-form">
+		<%= render partial: "/discussions/form" %>
+	</div>
 
 
-</div>
