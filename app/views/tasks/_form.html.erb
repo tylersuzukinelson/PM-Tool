@@ -1,25 +1,10 @@
-<% if @task.errors.any? %>
-	<ul>
-		<% @task.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-		<% end %>
-	</ul>
-<% end %>
-
-<%= form_for @task do |f| %>
+<%= simple_form_for [@project, @task], html: { class: "form-horizontal" }, remote: true do |f| %>
 	<div class="container">
-		<%= f.label :title %>
-		<%= f.text_field :title, class: "form-control" %>
+		<%= f.input :title %>
 		<br>
-		
-		<%= f.label :due_date %>
-		<%= f.date_field :due_date, class: "form-control" %>
+		<%= f.input :due_date %>
 		<br>
-
-		<%= f.label :body %>
-		<%= f.text_area :body, class: "form-control" %>
-		<br>
-
-		<%= f.submit class: "btn btn-submit" %>
+		<%= f.input :body %>
+		<%= f.submit "Add to Project", class: "btn btn-submit" %>
 	</div>
 <% end %>

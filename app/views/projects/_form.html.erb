@@ -1,24 +1,17 @@
-<% if @project.errors.any? %>
-	<ul>
-		<% @project.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-		<% end %>
-	</uprojectl>
-<% end %>
-
-<%= form_for @project do |f| %>
+<%= simple_form_for @project, html: {class: "form-horizontal"} do |f| %>
 	<div class="container">
-		<%= f.label :title %>
-		<%= f.text_field :title, class: "form-control" %>
+		<%= f.input :title %>
 		<br>
 		
-		<%= f.label :due_date %>
-		<%= f.date_field :due_date, class: "form-control" %>
+		<%= f.input :due_date %>
 		<br>
 
-		<%= f.label :description %>
-		<%= f.text_area :description, class: "form-control" %>
+		<%= f.input :description %>
 		<br>
+
+		<%= f.association :contributing_users, as: :check_boxes, label_method: :full_name %>
+		<br>
+		<%= f.input :tag_list, label: 'Add Tags (separated by commas)'%>
 
 		<%= f.submit class: "btn btn-submit" %>
 	</div>

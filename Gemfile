@@ -8,6 +8,9 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem "bootstrap-sass"
+gem 'cancancan', '~> 1.10'
+gem 'simple_form'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -26,6 +29,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'devise'
+gem 'hirb'
+gem 'awesome_print'
+gem 'interactive_editor'
+gem 'delayed_job_active_record'
+gem "delayed_job_web"
+gem 'delayed_job_recurring'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -37,6 +47,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'faker'
+  gem "letter_opener"
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

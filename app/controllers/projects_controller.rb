@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
-
+	before_action :authenticate_user!
+	
 	def index
 		@projects = Project.all
 	end
@@ -11,8 +12,11 @@ class ProjectsController < ApplicationController
 
 	def create
 		@project = Project.new project_params
+		@project.user = current_user
+
 
 		if @project.save
+			ProjectMailer.schedule!
 			redirect_to projects_path, notice: "Project successfully created!"
 		else
 			render :new
@@ -25,6 +29,16 @@ class ProjectsController < ApplicationController
 
 	def show
 		@project = Project.find params[:id]
+
+		@discussion = Discussion.new
+		@discussions = @project.discussions
+
+		@task = Task.new
+		@task.project = @project
+
+		@tag = Tag.new
+
+		@contributors = @project.contributing_users
 	end
 
 	def update
@@ -39,6 +53,8 @@ class ProjectsController < ApplicationController
 
 	def destroy
 		@project = Project.find params[:id]
+		ProjectMailer.unschedule
+
 
 		@project.destroy
 		redirect_to projects_path, notice: "Project successfully deleted!"
@@ -51,7 +67,6 @@ private
 	end
 
 	def project_params
-		project_params = params.require(:project).permit(:title, :description, :due_date)
+		project_params = params.require(:project).permit(:title, :description, :due_date, :tag_list, {contributing_user_ids: []})
 	end
-
 end

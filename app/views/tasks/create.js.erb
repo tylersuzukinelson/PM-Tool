@@ -1,0 +1,7 @@
+<% if @task.errors.any? %>
+  $("#<%= dom_id(@project) %> .task-form").html("<%= j render partial: "/tasks/form", locals: {task: @task} %>");
+<% else %>
+  $("#<%= dom_id(@project) %> .tasks").append("<%= j render partial: "/tasks/task",locals: {task: @task, project: @project} %>")
+  <% @task = Task.new %>
+  $("#<%= dom_id(@project) %> .task-form").html("<%= j render partial: "/tasks/form", locals: {project: @project} %>");
+<% end %>

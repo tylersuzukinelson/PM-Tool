@@ -1,0 +1,26 @@
+<p>Hello <%= @task.user%>, </p>
+<p>The following is the summary for Project: <%= @project.title %> on <%= Date.today %>:</p>
+
+<p>Tasks created today:</p>
+<ul>
+	<% @tasks.each do |task| %>
+		<%= if task.created_at.strftime("%m/%d/%Y") == Time.now.strftime("%m/%d/%Y") %>			
+			<li><%= task.title %></li>
+		<% end %>
+	<% end %>
+</ul>
+<br>
+
+<p>Discussions created today:</p>
+<ul>
+	<% @discussions.each do |discussion| %>
+	<%= if discussion.created_at.strftime("%m/%d/%Y") == Time.now.strftime("%m/%d/%Y") %>		
+			<li><%= discussion.title %></li>
+		<% end %>
+	<% end %>
+</ul>
+<br>
+
+<p>Regards,</p>
+<p>Project Manager</p>
+

@@ -1,0 +1,23 @@
+<div id="<%= dom_id(discussion) %>">
+  <h4><%= discussion.title %></h4>
+  <%= discussion.description %>
+  <br>
+  <%= link_to "Update Discussion", edit_project_discussion_path(@project, discussion), class: "btn btn-xs btn-info" %>
+  <%= link_to "Delete Discussion", project_discussion_path(@project, discussion), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-xs btn-danger"%>
+ 
+ <!-- add comment form -->
+  <div class="comment-form">
+    <%= render partial: "/comments/form", locals: {discussion: discussion} %>
+  </div>
+
+  <!-- display current comments -->
+  <div class="comments">
+    <h5>Current Comments</h5>
+    <% discussion.comments.each do |comment| %>
+      <%= render partial: "/comments/comment", locals: {discussion: discussion, comment: comment} %>
+    <% end %>
+  </div>
+</div>
+    <hr>
+
+

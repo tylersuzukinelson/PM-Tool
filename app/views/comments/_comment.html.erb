@@ -1,0 +1,6 @@
+<div class="well" id="<%= dom_id(comment) %>">
+  <%= comment.body %>
+
+  <%= link_to "Edit Comment", edit_discussion_comment_path(discussion, comment), class: "btn btn-xs btn-info" %>
+  <%= link_to "Delete Comment", discussion_comment_path(discussion, comment), data: {confirm: "Are you sure?"}, method: :delete, class: "btn btn-xs btn-danger", remote: true %>
+</div>

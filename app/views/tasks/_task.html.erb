@@ -1,0 +1,5 @@
+<div class="well" id="<%= dom_id(task) %>">
+  <%= task.body %>
+  <%= standard_date(task.created_at) %>
+  <%= link_to "Delete", project_task_path(@project, @task), data: {confirm: "Are you sure?"}, method: :delete, class: "btn btn-xs btn-danger", remote: true %>
+</div>
